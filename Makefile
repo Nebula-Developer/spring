@@ -6,4 +6,4 @@ run:
 
 build:
 	@mkdir -p bin
-	@g++ -o bin/spring src/main.cpp -ltermcap
+	@g++ -o bin/spring src/main.cpp src/term.cpp src/input.cpp src/exec.cpp -ltermcap
