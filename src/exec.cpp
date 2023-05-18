@@ -34,6 +34,8 @@ void exec_command(std::string command) {
     if (pid == 0) {
         int status = execvp(args_vec[0], args_vec);
         if (status == -1) std::cout << "spring: command not found: " << args_vec[0] << std::endl;
+        // kill child process
+        exit(0);
     } else {
         wait(NULL);
     }

@@ -18,11 +18,10 @@ int main(int argc, char **argv) {
     while (true) {
         command = std::string();
         get_input(command);
-        std::cout << "\"" << command << "\" (" << (command == "exit") << ")" << std::endl;
 
         if (command == "exit") {
             std::cout << "Exiting..." << std::endl;
-            break;
+            exit(0);
         }
 
         exec_command(command);

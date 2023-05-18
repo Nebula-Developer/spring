@@ -28,7 +28,8 @@ void get_input(std::string &command) {
         std::string prefixC = prefix();
         int prefixLen = length_without_escape_sequences(prefixC);
 
-        std::cout << set_term_pos(0, posY) << prefixC << command << set_term_pos(prefixLen + x + 1, posY);
+        std::string printingStr = set_term_pos(0, posY) + prefixC + command + set_term_pos(prefixLen + x + 1, posY);
+        write(STDOUT_FILENO, printingStr.c_str(), printingStr.length());
 
         char c = getchar();
         if (c == '\n') break;
