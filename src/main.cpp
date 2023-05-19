@@ -10,6 +10,7 @@
 #include "input.hpp"
 #include "term.hpp"
 #include "exec.hpp"
+#include "integrated_command.hpp"
 
 #define clearscr() printf("\033[H\033[J")
 
@@ -18,12 +19,6 @@ int main(int argc, char **argv) {
     while (true) {
         command = std::string();
         get_input(command);
-
-        if (command == "exit") {
-            std::cout << "Exiting..." << std::endl;
-            exit(0);
-        }
-
         exec_command(command);
     }
     return 0;
